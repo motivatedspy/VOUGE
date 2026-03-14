@@ -230,7 +230,667 @@ terms of section 4, provided that you also meet all of these conditions:
     d) If the work has interactive user interfaces, each must display
     Appropriate Legal Notices; however, if the Program has interactive
     interfaces that do not display Appropriate Legal Notices, your
-    work need not make them do so.
+    work need not make them do so.from flask import Flask, Response
+
+app = Flask(__name__)
+
+HTML_PAGE = """<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+
+  <title>Learn Trading Online | Forex, Crypto & Stocks – TradeSmart Academy</title>
+
+  <meta name=\"description\" content=\"TradeSmart Academy helps beginners learn Forex, Crypto, and Stock trading with clear lessons, real strategies, and risk management.\" />
+  <meta name=\"keywords\" content=\"learn trading, forex trading course, crypto trading, stock trading, trading for beginners, online trading academy\" />
+  <meta name=\"author\" content=\"TradeSmart Academy\" />
+
+  <meta property=\"og:title\" content=\"Learn Trading Online – TradeSmart Academy\" />
+  <meta property=\"og:description\" content=\"Beginner-friendly Forex, Crypto, and Stock trading education.\" />
+  <meta property=\"og:type\" content=\"website\" />
+
+  <style>
+    body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f19;color:#ffffff}
+    header {background:linear-gradient(135deg,#1e3c72,#2a5298);padding:60px 20px;text-align:center}
+    header h1 {font-size:2.5rem;margin-bottom:10px}
+    header p {font-size:1.1rem;max-width:600px;margin:auto}
+    .btn {display:inline-block;margin-top:25px;padding:12px 28px;background:#00c896;color:#000;text-decoration:none;font-weight:bold;border-radius:6px}
+    section {padding:60px 20px;max-width:1100px;margin:auto}
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card {background:#151a2d;padding:25px;border-radius:10px}
+    .card h3 {margin-top:0;color:#00c896}
+    footer {background:#05070d;text-align:center;padding:20px;font-size:0.9rem;color:#aaa}
+  </style>
+
+  <script>
+    console.log('[DEBUG] Page head loaded: TradeSmart Academy metadata initialized');
+  </script>
+</head>
+<body>
+
+<script>
+  console.log('[DEBUG] Body rendering started');
+</script>
+
+<header>
+  <script>console.log('[DEBUG] Header section loaded');</script>
+  <h1>Learn Trading Online</h1>
+  <p>TradeSmart Academy teaches Forex, Crypto, and Stock Trading with simple lessons, proven strategies, and proper risk management.</p>
+  <a href=\"#courses\" class=\"btn\" onclick=\"console.log('[DEBUG] Start Learning button clicked')\">Start Learning Trading</a>
+</header>
+
+<section id=\"courses\">
+  <script>console.log('[DEBUG] Courses section rendered');</script>
+
+  <h2>Online Trading Courses for Beginners</h2>
+
+  <div class=\"features\">
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Trading Basics');</script>
+      <h3>Trading Basics</h3>
+      <p>Understand markets, charts, candlesticks, and how trading really works.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Technical Analysis');</script>
+      <h3>Technical Analysis</h3>
+      <p>Learn support & resistance, indicators, trends, and entry strategies.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Risk Management');</script>
+      <h3>Risk Management</h3>
+      <p>Protect your capital with proper position sizing and psychology.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Live Examples');</script>
+      <h3>Live Examples</h3>
+      <p>See real chart examples and practical trade setups.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <script>console.log('[DEBUG] Why Choose Us section rendered');</script>
+  <h2>Why TradeSmart Academy for Learning Trading?</h2>
+  <p>TradeSmart Academy is designed for beginners and intermediate traders who want clear explanations, no hype, and practical knowledge.</p>
+</section>
+
+<footer>
+  <script>console.log('[DEBUG] Footer loaded - page fully rendered');</script>
+  © 2026 TradeSmart Academy. All rights reserved.
+</footer>
+
+<script>
+  console.log('[DEBUG] Page load complete');
+</script>
+
+</body>
+</html>
+"""
+
+@app.route('/')
+def home():
+    print('[SERVER] Request received for home page')
+    return Response(HTML_PAGE, mimetype='text/html')
+
+
+if __name__ == '__main__':
+    print('[SERVER] Starting TradeSmart Academy server on http://127.0.0.1:5000')
+    app.run(debug=True)
+from flask import Flask, Response
+
+app = Flask(__name__)
+
+HTML_PAGE = """<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+
+  <title>Learn Trading Online | Forex, Crypto & Stocks – TradeSmart Academy</title>
+
+  <meta name=\"description\" content=\"TradeSmart Academy helps beginners learn Forex, Crypto, and Stock trading with clear lessons, real strategies, and risk management.\" />
+  <meta name=\"keywords\" content=\"learn trading, forex trading course, crypto trading, stock trading, trading for beginners, online trading academy\" />
+  <meta name=\"author\" content=\"TradeSmart Academy\" />
+
+  <meta property=\"og:title\" content=\"Learn Trading Online – TradeSmart Academy\" />
+  <meta property=\"og:description\" content=\"Beginner-friendly Forex, Crypto, and Stock trading education.\" />
+  <meta property=\"og:type\" content=\"website\" />
+
+  <style>
+    body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f19;color:#ffffff}
+    header {background:linear-gradient(135deg,#1e3c72,#2a5298);padding:60px 20px;text-align:center}
+    header h1 {font-size:2.5rem;margin-bottom:10px}
+    header p {font-size:1.1rem;max-width:600px;margin:auto}
+    .btn {display:inline-block;margin-top:25px;padding:12px 28px;background:#00c896;color:#000;text-decoration:none;font-weight:bold;border-radius:6px}
+    section {padding:60px 20px;max-width:1100px;margin:auto}
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card {background:#151a2d;padding:25px;border-radius:10px}
+    .card h3 {margin-top:0;color:#00c896}
+    footer {background:#05070d;text-align:center;padding:20px;font-size:0.9rem;color:#aaa}
+  </style>
+
+  <script>
+    console.log('[DEBUG] Page head loaded: TradeSmart Academy metadata initialized');
+  </script>
+</head>
+<body>
+
+<script>
+  console.log('[DEBUG] Body rendering started');
+</script>
+
+<header>
+  <script>console.log('[DEBUG] Header section loaded');</script>
+  <h1>Learn Trading Online</h1>
+  <p>TradeSmart Academy teaches Forex, Crypto, and Stock Trading with simple lessons, proven strategies, and proper risk management.</p>
+  <a href=\"#courses\" class=\"btn\" onclick=\"console.log('[DEBUG] Start Learning button clicked')\">Start Learning Trading</a>
+</header>
+
+<section id=\"courses\">
+  <script>console.log('[DEBUG] Courses section rendered');</script>
+
+  <h2>Online Trading Courses for Beginners</h2>
+
+  <div class=\"features\">
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Trading Basics');</script>
+      <h3>Trading Basics</h3>
+      <p>Understand markets, charts, candlesticks, and how trading really works.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Technical Analysis');</script>
+      <h3>Technical Analysis</h3>
+      <p>Learn support & resistance, indicators, trends, and entry strategies.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Risk Management');</script>
+      <h3>Risk Management</h3>
+      <p>Protect your capital with proper position sizing and psychology.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Live Examples');</script>
+      <h3>Live Examples</h3>
+      <p>See real chart examples and practical trade setups.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <script>console.log('[DEBUG] Why Choose Us section rendered');</script>
+  <h2>Why TradeSmart Academy for Learning Trading?</h2>
+  <p>TradeSmart Academy is designed for beginners and intermediate traders who want clear explanations, no hype, and practical knowledge.</p>
+</section>
+
+<footer>
+  <script>console.log('[DEBUG] Footer loaded - page fully rendered');</script>
+  © 2026 TradeSmart Academy. All rights reserved.
+</footer>
+
+<script>
+  console.log('[DEBUG] Page load complete');
+</script>
+
+</body>
+</html>
+"""
+
+@app.route('/')
+def home():
+    print('[SERVER] Request received for home page')
+    return Response(HTML_PAGE, mimetype='text/html')
+
+
+if __name__ == '__main__':
+    print('[SERVER] Starting TradeSmart Academy server on http://127.0.0.1:5000')
+    app.run(debug=True)
+from flask import Flask, Response
+
+app = Flask(__name__)
+
+HTML_PAGE = """<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+
+  <title>Learn Trading Online | Forex, Crypto & Stocks – TradeSmart Academy</title>
+
+  <meta name=\"description\" content=\"TradeSmart Academy helps beginners learn Forex, Crypto, and Stock trading with clear lessons, real strategies, and risk management.\" />
+  <meta name=\"keywords\" content=\"learn trading, forex trading course, crypto trading, stock trading, trading for beginners, online trading academy\" />
+  <meta name=\"author\" content=\"TradeSmart Academy\" />
+
+  <meta property=\"og:title\" content=\"Learn Trading Online – TradeSmart Academy\" />
+  <meta property=\"og:description\" content=\"Beginner-friendly Forex, Crypto, and Stock trading education.\" />
+  <meta property=\"og:type\" content=\"website\" />
+
+  <style>
+    body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f19;color:#ffffff}
+    header {background:linear-gradient(135deg,#1e3c72,#2a5298);padding:60px 20px;text-align:center}
+    header h1 {font-size:2.5rem;margin-bottom:10px}
+    header p {font-size:1.1rem;max-width:600px;margin:auto}
+    .btn {display:inline-block;margin-top:25px;padding:12px 28px;background:#00c896;color:#000;text-decoration:none;font-weight:bold;border-radius:6px}
+    section {padding:60px 20px;max-width:1100px;margin:auto}
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card {background:#151a2d;padding:25px;border-radius:10px}
+    .card h3 {margin-top:0;color:#00c896}
+    footer {background:#05070d;text-align:center;padding:20px;font-size:0.9rem;color:#aaa}
+  </style>
+
+  <script>
+    console.log('[DEBUG] Page head loaded: TradeSmart Academy metadata initialized');
+  </script>
+</head>
+<body>
+
+<script>
+  console.log('[DEBUG] Body rendering started');
+</script>
+
+<header>
+  <script>console.log('[DEBUG] Header section loaded');</script>
+  <h1>Learn Trading Online</h1>
+  <p>TradeSmart Academy teaches Forex, Crypto, and Stock Trading with simple lessons, proven strategies, and proper risk management.</p>
+  <a href=\"#courses\" class=\"btn\" onclick=\"console.log('[DEBUG] Start Learning button clicked')\">Start Learning Trading</a>
+</header>
+
+<section id=\"courses\">
+  <script>console.log('[DEBUG] Courses section rendered');</script>
+
+  <h2>Online Trading Courses for Beginners</h2>
+
+  <div class=\"features\">
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Trading Basics');</script>
+      <h3>Trading Basics</h3>
+      <p>Understand markets, charts, candlesticks, and how trading really works.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Technical Analysis');</script>
+      <h3>Technical Analysis</h3>
+      <p>Learn support & resistance, indicators, trends, and entry strategies.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Risk Management');</script>
+      <h3>Risk Management</h3>
+      <p>Protect your capital with proper position sizing and psychology.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Live Examples');</script>
+      <h3>Live Examples</h3>
+      <p>See real chart examples and practical trade setups.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <script>console.log('[DEBUG] Why Choose Us section rendered');</script>
+  <h2>Why TradeSmart Academy for Learning Trading?</h2>
+  <p>TradeSmart Academy is designed for beginners and intermediate traders who want clear explanations, no hype, and practical knowledge.</p>
+</section>
+
+<footer>
+  <script>console.log('[DEBUG] Footer loaded - page fully rendered');</script>
+  © 2026 TradeSmart Academy. All rights reserved.
+</footer>
+
+<script>
+  console.log('[DEBUG] Page load complete');
+</script>
+
+</body>
+</html>
+"""
+
+@app.route('/')
+def home():
+    print('[SERVER] Request received for home page')
+    return Response(HTML_PAGE, mimetype='text/html')
+
+
+if __name__ == '__main__':
+    print('[SERVER] Starting TradeSmart Academy server on http://127.0.0.1:5000')
+    app.run(debug=True)
+from flask import Flask, Response
+
+app = Flask(__name__)
+
+HTML_PAGE = """<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+
+  <title>Learn Trading Online | Forex, Crypto & Stocks – TradeSmart Academy</title>
+
+  <meta name=\"description\" content=\"TradeSmart Academy helps beginners learn Forex, Crypto, and Stock trading with clear lessons, real strategies, and risk management.\" />
+  <meta name=\"keywords\" content=\"learn trading, forex trading course, crypto trading, stock trading, trading for beginners, online trading academy\" />
+  <meta name=\"author\" content=\"TradeSmart Academy\" />
+
+  <meta property=\"og:title\" content=\"Learn Trading Online – TradeSmart Academy\" />
+  <meta property=\"og:description\" content=\"Beginner-friendly Forex, Crypto, and Stock trading education.\" />
+  <meta property=\"og:type\" content=\"website\" />
+
+  <style>
+    body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f19;color:#ffffff}
+    header {background:linear-gradient(135deg,#1e3c72,#2a5298);padding:60px 20px;text-align:center}
+    header h1 {font-size:2.5rem;margin-bottom:10px}
+    header p {font-size:1.1rem;max-width:600px;margin:auto}
+    .btn {display:inline-block;margin-top:25px;padding:12px 28px;background:#00c896;color:#000;text-decoration:none;font-weight:bold;border-radius:6px}
+    section {padding:60px 20px;max-width:1100px;margin:auto}
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card {background:#151a2d;padding:25px;border-radius:10px}
+    .card h3 {margin-top:0;color:#00c896}
+    footer {background:#05070d;text-align:center;padding:20px;font-size:0.9rem;color:#aaa}
+  </style>
+
+  <script>
+    console.log('[DEBUG] Page head loaded: TradeSmart Academy metadata initialized');
+  </script>
+</head>
+<body>
+
+<script>
+  console.log('[DEBUG] Body rendering started');
+</script>
+
+<header>
+  <script>console.log('[DEBUG] Header section loaded');</script>
+  <h1>Learn Trading Online</h1>
+  <p>TradeSmart Academy teaches Forex, Crypto, and Stock Trading with simple lessons, proven strategies, and proper risk management.</p>
+  <a href=\"#courses\" class=\"btn\" onclick=\"console.log('[DEBUG] Start Learning button clicked')\">Start Learning Trading</a>
+</header>
+
+<section id=\"courses\">
+  <script>console.log('[DEBUG] Courses section rendered');</script>
+
+  <h2>Online Trading Courses for Beginners</h2>
+
+  <div class=\"features\">
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Trading Basics');</script>
+      <h3>Trading Basics</h3>
+      <p>Understand markets, charts, candlesticks, and how trading really works.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Technical Analysis');</script>
+      <h3>Technical Analysis</h3>
+      <p>Learn support & resistance, indicators, trends, and entry strategies.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Risk Management');</script>
+      <h3>Risk Management</h3>
+      <p>Protect your capital with proper position sizing and psychology.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Live Examples');</script>
+      <h3>Live Examples</h3>
+      <p>See real chart examples and practical trade setups.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <script>console.log('[DEBUG] Why Choose Us section rendered');</script>
+  <h2>Why TradeSmart Academy for Learning Trading?</h2>
+  <p>TradeSmart Academy is designed for beginners and intermediate traders who want clear explanations, no hype, and practical knowledge.</p>
+</section>
+
+<footer>
+  <script>console.log('[DEBUG] Footer loaded - page fully rendered');</script>
+  © 2026 TradeSmart Academy. All rights reserved.
+</footer>
+
+<script>
+  console.log('[DEBUG] Page load complete');
+</script>
+
+</body>
+</html>
+"""
+
+@app.route('/')
+def home():
+    print('[SERVER] Request received for home page')
+    return Response(HTML_PAGE, mimetype='text/html')
+
+
+if __name__ == '__main__':
+    print('[SERVER] Starting TradeSmart Academy server on http://127.0.0.1:5000')
+    app.run(debug=True)
+from flask import Flask, Response
+
+app = Flask(__name__)
+
+HTML_PAGE = """<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+
+  <title>Learn Trading Online | Forex, Crypto & Stocks – TradeSmart Academy</title>
+
+  <meta name=\"description\" content=\"TradeSmart Academy helps beginners learn Forex, Crypto, and Stock trading with clear lessons, real strategies, and risk management.\" />
+  <meta name=\"keywords\" content=\"learn trading, forex trading course, crypto trading, stock trading, trading for beginners, online trading academy\" />
+  <meta name=\"author\" content=\"TradeSmart Academy\" />
+
+  <meta property=\"og:title\" content=\"Learn Trading Online – TradeSmart Academy\" />
+  <meta property=\"og:description\" content=\"Beginner-friendly Forex, Crypto, and Stock trading education.\" />
+  <meta property=\"og:type\" content=\"website\" />
+
+  <style>
+    body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f19;color:#ffffff}
+    header {background:linear-gradient(135deg,#1e3c72,#2a5298);padding:60px 20px;text-align:center}
+    header h1 {font-size:2.5rem;margin-bottom:10px}
+    header p {font-size:1.1rem;max-width:600px;margin:auto}
+    .btn {display:inline-block;margin-top:25px;padding:12px 28px;background:#00c896;color:#000;text-decoration:none;font-weight:bold;border-radius:6px}
+    section {padding:60px 20px;max-width:1100px;margin:auto}
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card {background:#151a2d;padding:25px;border-radius:10px}
+    .card h3 {margin-top:0;color:#00c896}
+    footer {background:#05070d;text-align:center;padding:20px;font-size:0.9rem;color:#aaa}
+  </style>
+
+  <script>
+    console.log('[DEBUG] Page head loaded: TradeSmart Academy metadata initialized');
+  </script>
+</head>
+<body>
+
+<script>
+  console.log('[DEBUG] Body rendering started');
+</script>
+
+<header>
+  <script>console.log('[DEBUG] Header section loaded');</script>
+  <h1>Learn Trading Online</h1>
+  <p>TradeSmart Academy teaches Forex, Crypto, and Stock Trading with simple lessons, proven strategies, and proper risk management.</p>
+  <a href=\"#courses\" class=\"btn\" onclick=\"console.log('[DEBUG] Start Learning button clicked')\">Start Learning Trading</a>
+</header>
+
+<section id=\"courses\">
+  <script>console.log('[DEBUG] Courses section rendered');</script>
+
+  <h2>Online Trading Courses for Beginners</h2>
+
+  <div class=\"features\">
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Trading Basics');</script>
+      <h3>Trading Basics</h3>
+      <p>Understand markets, charts, candlesticks, and how trading really works.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Technical Analysis');</script>
+      <h3>Technical Analysis</h3>
+      <p>Learn support & resistance, indicators, trends, and entry strategies.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Risk Management');</script>
+      <h3>Risk Management</h3>
+      <p>Protect your capital with proper position sizing and psychology.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Live Examples');</script>
+      <h3>Live Examples</h3>
+      <p>See real chart examples and practical trade setups.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <script>console.log('[DEBUG] Why Choose Us section rendered');</script>
+  <h2>Why TradeSmart Academy for Learning Trading?</h2>
+  <p>TradeSmart Academy is designed for beginners and intermediate traders who want clear explanations, no hype, and practical knowledge.</p>
+</section>
+
+<footer>
+  <script>console.log('[DEBUG] Footer loaded - page fully rendered');</script>
+  © 2026 TradeSmart Academy. All rights reserved.
+</footer>
+
+<script>
+  console.log('[DEBUG] Page load complete');
+</script>
+
+</body>
+</html>
+"""
+
+@app.route('/')
+def home():
+    print('[SERVER] Request received for home page')
+    return Response(HTML_PAGE, mimetype='text/html')
+
+
+if __name__ == '__main__':
+    print('[SERVER] Starting TradeSmart Academy server on http://127.0.0.1:5000')
+    app.run(debug=True)
+from flask import Flask, Response
+
+app = Flask(__name__)
+
+HTML_PAGE = """<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+
+  <title>Learn Trading Online | Forex, Crypto & Stocks – TradeSmart Academy</title>
+
+  <meta name=\"description\" content=\"TradeSmart Academy helps beginners learn Forex, Crypto, and Stock trading with clear lessons, real strategies, and risk management.\" />
+  <meta name=\"keywords\" content=\"learn trading, forex trading course, crypto trading, stock trading, trading for beginners, online trading academy\" />
+  <meta name=\"author\" content=\"TradeSmart Academy\" />
+
+  <meta property=\"og:title\" content=\"Learn Trading Online – TradeSmart Academy\" />
+  <meta property=\"og:description\" content=\"Beginner-friendly Forex, Crypto, and Stock trading education.\" />
+  <meta property=\"og:type\" content=\"website\" />
+
+  <style>
+    body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f19;color:#ffffff}
+    header {background:linear-gradient(135deg,#1e3c72,#2a5298);padding:60px 20px;text-align:center}
+    header h1 {font-size:2.5rem;margin-bottom:10px}
+    header p {font-size:1.1rem;max-width:600px;margin:auto}
+    .btn {display:inline-block;margin-top:25px;padding:12px 28px;background:#00c896;color:#000;text-decoration:none;font-weight:bold;border-radius:6px}
+    section {padding:60px 20px;max-width:1100px;margin:auto}
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card {background:#151a2d;padding:25px;border-radius:10px}
+    .card h3 {margin-top:0;color:#00c896}
+    footer {background:#05070d;text-align:center;padding:20px;font-size:0.9rem;color:#aaa}
+  </style>
+
+  <script>
+    console.log('[DEBUG] Page head loaded: TradeSmart Academy metadata initialized');
+  </script>
+</head>
+<body>
+
+<script>
+  console.log('[DEBUG] Body rendering started');
+</script>
+
+<header>
+  <script>console.log('[DEBUG] Header section loaded');</script>
+  <h1>Learn Trading Online</h1>
+  <p>TradeSmart Academy teaches Forex, Crypto, and Stock Trading with simple lessons, proven strategies, and proper risk management.</p>
+  <a href=\"#courses\" class=\"btn\" onclick=\"console.log('[DEBUG] Start Learning button clicked')\">Start Learning Trading</a>
+</header>
+
+<section id=\"courses\">
+  <script>console.log('[DEBUG] Courses section rendered');</script>
+
+  <h2>Online Trading Courses for Beginners</h2>
+
+  <div class=\"features\">
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Trading Basics');</script>
+      <h3>Trading Basics</h3>
+      <p>Understand markets, charts, candlesticks, and how trading really works.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Technical Analysis');</script>
+      <h3>Technical Analysis</h3>
+      <p>Learn support & resistance, indicators, trends, and entry strategies.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Risk Management');</script>
+      <h3>Risk Management</h3>
+      <p>Protect your capital with proper position sizing and psychology.</p>
+    </div>
+
+    <div class=\"card\">
+      <script>console.log('[DEBUG] Card loaded: Live Examples');</script>
+      <h3>Live Examples</h3>
+      <p>See real chart examples and practical trade setups.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <script>console.log('[DEBUG] Why Choose Us section rendered');</script>
+  <h2>Why TradeSmart Academy for Learning Trading?</h2>
+  <p>TradeSmart Academy is designed for beginners and intermediate traders who want clear explanations, no hype, and practical knowledge.</p>
+</section>
+
+<footer>
+  <script>console.log('[DEBUG] Footer loaded - page fully rendered');</script>
+  © 2026 TradeSmart Academy. All rights reserved.
+</footer>
+
+<script>
+  console.log('[DEBUG] Page load complete');
+</script>
+
+</body>
+</html>
+"""
+
+@app.route('/')
+def home():
+    print('[SERVER] Request received for home page')
+    return Response(HTML_PAGE, mimetype='text/html')
+
+
+if __name__ == '__main__':
+    print('[SERVER] Starting TradeSmart Academy server on http://127.0.0.1:5000')
+    app.run(debug=True)
+
 
   A compilation of a covered work with other separate and independent
 works, which are not by their nature extensions of the covered work,
